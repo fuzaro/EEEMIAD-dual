@@ -96,6 +96,7 @@ Regras do brief:
 ## 5. Artefatos de handoff
 
 ### Reflexivo → executivo
+
 | Saída do reflexivo | Entrada do executivo |
 |---|---|
 | ADR aceita (`ACCEPTED`) | Implementação |
@@ -105,6 +106,7 @@ Regras do brief:
 | Critério de aceite | Validação pós-implementação |
 
 ### Executivo → reflexivo
+
 | Saída do executivo | Entrada do reflexivo |
 |---|---|
 | Implementação completa com medição | **Avaliação de cumprimento da ADR** |

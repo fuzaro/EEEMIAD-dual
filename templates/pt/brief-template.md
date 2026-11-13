@@ -19,7 +19,7 @@ date: YYYY-MM-DD
 
 1. **Efeitos Colaterais:** O que muda além dos arquivos declarados? (Tabelas, credenciais, clusters):
    - `______`
-2. **Reversível?** [SIM / NÃO]. Se NÃO $\to$ Parar e solicitar aprovação humana explícita.
+2. **Reversível?** [SIM / NÃO]. Se NÃO → Parar e solicitar aprovação humana explícita.
 3. **Rollback Ensaiado:** Snapshot, backup ou flag anterior existem ANTES de rodar? Tempo de recuperação?
    - `______`
 4. **Composição de Flips:** Quais outros gates foram flipados nesta mesma janela? O produto foi testado?

@@ -19,7 +19,7 @@ date: YYYY-MM-DD
 
 1. **Side-Effects:** What mutates beyond the declared target files? (Tables, keys, clusters, schemas):
    - `______`
-2. **Reversible?** [YES / NO]. If NO $\to$ STOP and request explicit human authorization.
+2. **Reversible?** [YES / NO]. If NO → STOP and request explicit human authorization.
 3. **Rehearsed Rollback:** Do snapshots, backups, or previous keys exist BEFORE running? Recovery time?
    - `______`
 4. **Flip Composition:** What other gates were flipped in this window? Was the composed product tested?

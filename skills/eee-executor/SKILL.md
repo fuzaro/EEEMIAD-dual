@@ -41,6 +41,7 @@ Modify only the files declared in the scope. Follow the governing specification 
 
 ### Step 4: Validate and Commit
 Execute tests in an isolated environment. Commit using the canonical message format:
+
 ```
 <scope>: <subject> (closes ADR-[XXX])
 

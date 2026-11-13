@@ -96,6 +96,7 @@ Brief rules:
 ## 5. Handoff artefacts
 
 ### Reflective → executive
+
 | Reflective output | Executive input |
 |---|---|
 | Accepted ADR (`ACCEPTED`) | Implementation |
@@ -105,6 +106,7 @@ Brief rules:
 | Acceptance criterion | Post-implementation validation |
 
 ### Executive → reflective
+
 | Executive output | Reflective input |
 |---|---|
 | Complete implementation with measurement | **ADR compliance evaluation** |
