@@ -2,6 +2,15 @@
 
 All notable changes to EEEMIAD-dual are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.3.0] — 2026-11-15
+
+### Added
+- **Cross-session communication** guide (`docs/pt/03-comunicacao-entre-sessoes.md`, `docs/en/03-cross-session-communication.md`): the protocol used to run a pre-flight, a deploy and a timed rollback from a second Claude Code session (Remote Control) that held the cluster credential. Closed-packet messages, two keys for writes, secrets that do not travel, restart of the remote session, correction protocol, verification of what comes back, anti-patterns.
+- `templates/{pt,en}/cross-session-message-template.md`.
+- `eee-task-router`: criterion 0, remote packet.
+
+Principle (tool-neutral) in EEEMIAD 1.4.0, ch. 08 §7.
+
 ## [0.2.0] — 2026-11-14
 
 ### Added

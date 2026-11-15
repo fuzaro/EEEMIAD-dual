@@ -4,7 +4,7 @@
 *The two-agent instantiation of EEE: one that decides, one that builds*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-v0.2.0-yellow.svg)](ROADMAP.md)
+[![Status](https://img.shields.io/badge/Status-v0.3.0-yellow.svg)](ROADMAP.md)
 [![Depends on](https://img.shields.io/badge/Depends_on-EEEMIAD-purple.svg)](https://github.com/fuzaro/EEEMIAD)
 
 > **Use o agente reflexivo para decidir o que construir. Use o agente executivo para construir o que foi decidido. ADRs e specs são a moeda de handoff entre eles.**
@@ -17,6 +17,8 @@
 - 🇺🇸 [Dual-Agent Workflow (English)](docs/en/01-dual-agent-workflow.md)
 - 🇧🇷 [Delegação por nível de contexto, opcional (Português)](docs/pt/02-delegacao-por-nivel.md)
 - 🇺🇸 [Delegation by context level, optional (English)](docs/en/02-tiered-delegation.md)
+- 🇧🇷 [Comunicação entre sessões (Português)](docs/pt/03-comunicacao-entre-sessoes.md)
+- 🇺🇸 [Cross-session communication (English)](docs/en/03-cross-session-communication.md)
 
 ---
 
@@ -69,16 +71,22 @@ Com um **sim** do operador na fase de perguntas, o trabalho fechado de um arco d
 | Oráculo | `eee-oracle-writer` · modelo diferente do builder | negativo próprio |
 | Sistema (decisões) | sessão principal | operador humano (`done@gate`) |
 
+## Comunicação entre sessões / Cross-session communication
+
+Quando parte do trabalho só pode acontecer noutro lugar (credencial, rede, máquina), a sessão que decide manda um **pacote fechado** à sessão que está no terreno, por Remote Control. Seis regras: executar onde estão o terreno e a credencial; o segredo não viaja; a mensagem é um pacote fechado; duas chaves para escrever; enviado não é lido; a afirmação do par é informação. → [docs/pt/03](docs/pt/03-comunicacao-entre-sessoes.md) · [docs/en/03](docs/en/03-cross-session-communication.md) · [template](templates/pt/cross-session-message-template.md)
+
 ## Estrutura / Layout
 
 ```
 EEEMIAD-dual/
 ├── docs/{pt,en}/01-dual-agent-workflow.md   o padrão completo
 ├── docs/{pt,en}/02-*                        delegação opcional por nível de contexto
+├── docs/{pt,en}/03-*                        comunicação entre sessões (Remote Control)
 ├── agents/                                  eee-local-executor · eee-local-checker · eee-module-builder · eee-oracle-writer
 ├── templates/{pt,en}/
 │   ├── brief-template.md                    handoff reflexivo → executivo, com pré-voo
-│   └── evaluation-ledger-template.md        avaliação de cumprimento decisão por decisão
+│   ├── evaluation-ledger-template.md        avaliação de cumprimento decisão por decisão
+│   └── cross-session-message-template.md    mensagem entre sessões: pacote fechado, correção, registro
 ├── skills/
 │   ├── eee-architect/                       skill do agente reflexivo (+ prompt de sessão)
 │   ├── eee-executor/                        skill do agente executivo (+ prompt de brief)

@@ -33,6 +33,7 @@ mkdir -p .claude/agents && cp <EEEMIAD-dual>/agents/eee-*.md .claude/agents/
 ## Step 2 · Split the arc into packets
 For each checklist line of the charter, write one task packet (EEEMIAD `templates/en/task-packet-template.md`) and classify it **in this order**:
 
+0. Needs a **credential, network or machine that only another session has** → **remote packet**: set `executes_at` and `action` (`read-only | write`), send it with the cross-session message template and follow `docs/en/03-cross-session-communication.md` (the secret does not travel; a write needs the operator's authorization in the acting session). The size rules below still apply to how the remote work is split.
 1. Needs a **decision** (contract, flag, ADR, conflict between layers, pre-flight answer) → **system**: stays in this session.
 2. Reads **more than one module** → **module** → `eee-module-builder`.
 3. Has **no mechanical gate** → cannot be local → module.
