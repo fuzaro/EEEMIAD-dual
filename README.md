@@ -4,7 +4,7 @@
 *The two-agent instantiation of EEE: one that decides, one that builds*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Foundations_(v0.1.0)-yellow.svg)](ROADMAP.md)
+[![Status](https://img.shields.io/badge/Status-v0.2.0-yellow.svg)](ROADMAP.md)
 [![Depends on](https://img.shields.io/badge/Depends_on-EEEMIAD-purple.svg)](https://github.com/fuzaro/EEEMIAD)
 
 > **Use o agente reflexivo para decidir o que construir. Use o agente executivo para construir o que foi decidido. ADRs e specs são a moeda de handoff entre eles.**
@@ -15,6 +15,8 @@
 
 - 🇧🇷 [Dual-Agent Workflow (Português)](docs/pt/01-dual-agent-workflow.md)
 - 🇺🇸 [Dual-Agent Workflow (English)](docs/en/01-dual-agent-workflow.md)
+- 🇧🇷 [Delegação por nível de contexto, opcional (Português)](docs/pt/02-delegacao-por-nivel.md)
+- 🇺🇸 [Delegation by context level, optional (English)](docs/en/02-tiered-delegation.md)
 
 ---
 
@@ -56,17 +58,32 @@ sequenceDiagram
 3. **Commit canônico de fechamento** — `<scope>: <subject> (closes ADR-xxx)` com comando e saída dos testes.
 4. **Avaliação de cumprimento** — o reflexivo audita **cláusula por cláusula** da ADR com vereditos tipados (`CUMPRIDA`, `PARCIAL`, `NÃO-CUMPRIDA`, `NÃO-CERTIFICÁVEL`). Quem implementa não avalia o próprio trabalho. → [`templates/pt/evaluation-ledger-template.md`](templates/pt/evaluation-ledger-template.md)
 
+## Opcional: delegação por nível de contexto / Optional: delegation by context level
+
+Com um **sim** do operador na fase de perguntas, o trabalho fechado de um arco desce para modelos menores e é conferido contra o gate por um intermediário; decisões ficam no topo. Desligado por padrão. → [docs/pt/02](docs/pt/02-delegacao-por-nivel.md) · [docs/en/02](docs/en/02-tiered-delegation.md)
+
+| Nível | Executa | Confere |
+|---|---|---|
+| Local (uma seção de spec, gate mecânico) | `eee-local-executor` · haiku | `eee-local-checker` · sonnet, contra o gate |
+| Módulo (um charter e seu módulo) | `eee-module-builder` · sonnet | sessão de sistema, nos gates |
+| Oráculo | `eee-oracle-writer` · modelo diferente do builder | negativo próprio |
+| Sistema (decisões) | sessão principal | operador humano (`done@gate`) |
+
 ## Estrutura / Layout
 
 ```
 EEEMIAD-dual/
 ├── docs/{pt,en}/01-dual-agent-workflow.md   o padrão completo
+├── docs/{pt,en}/02-*                        delegação opcional por nível de contexto
+├── agents/                                  eee-local-executor · eee-local-checker · eee-module-builder · eee-oracle-writer
 ├── templates/{pt,en}/
 │   ├── brief-template.md                    handoff reflexivo → executivo, com pré-voo
 │   └── evaluation-ledger-template.md        avaliação de cumprimento decisão por decisão
 ├── skills/
 │   ├── eee-architect/                       skill do agente reflexivo (+ prompt de sessão)
-│   └── eee-executor/                        skill do agente executivo (+ prompt de brief)
+│   ├── eee-executor/                        skill do agente executivo (+ prompt de brief)
+│   ├── eee-task-router/                     opcional: pergunta, classifica e despacha pacotes
+│   └── eee-gate-checker/                    opcional: conferência cega contra o gate
 └── ROADMAP.md
 ```
 

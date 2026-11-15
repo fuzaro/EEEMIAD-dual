@@ -31,5 +31,18 @@ final_tier: [done@estrutural | done@funcional | REJEITADO]
 
 ---
 
-## 3. Próximo Passo Acionável
+## 3. Registro de delegação (só com `delegation: tiered`)
+
+Uma linha por pacote de tarefa. Sem divisão por nível, apague esta seção.
+
+| Pacote | Nível | Executor (modelo) | Conferente (modelo) | Gate na 1ª | Tentativas | Escalonado para | Custo |
+|---|---|---|---|:---:|:---:|---|---|
+| `ARC-XXX-T01` | local | eee-local-executor (haiku) | eee-local-checker (sonnet) | ✅ | 1 | — | [tokens] |
+
+- **Taxa de escalonamento do nível local:** `[escalonados / pacotes locais]` · limite declarado no charter: `[__ %]`
+- Acima do limite: revisar a regra de classificação, não os modelos.
+
+---
+
+## 4. Próximo Passo Acionável
 > [Definição única e clara: promover para done@funcional ou emitir novo Brief corretivo].

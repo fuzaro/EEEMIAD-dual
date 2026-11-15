@@ -24,6 +24,9 @@ The **EEE Executor Skill** guides an AI agent operating in the **Executive Ring*
 
 ## Step-by-Step Workflow
 
+### Packet mode (only with `delegation: tiered`)
+When the charter says `delegation: tiered` and the work arrives as a **task packet**, the packet replaces the brief: read only its allowed inputs, produce only its output contract, run its gate and report in the packet's shape. The `eee-module-builder` agent follows this skill for module-level phases; local packets go to `eee-local-executor`. Without `delegation: tiered`, ignore this paragraph.
+
 ### Step 1: Run Pre-Flight Reality Check
 Inspect all surfaces named in the brief. Produce the Reality-Check report using the EEEMIAD `templates/en/reality-check-template.md`:
 - Probe files and lines.

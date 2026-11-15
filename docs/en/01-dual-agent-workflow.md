@@ -43,6 +43,9 @@ sequenceDiagram
 
 ## 2. Role division
 
+> [!TIP]
+> **Optional:** after the operator's yes at the questions phase, the executive role can be split by context level: smaller models execute closed local tasks and an intermediate one checks against the gate. See [02 · Delegation by context level](02-tiered-delegation.md).
+
 | Dimension | 🧠 Reflective | ⚡ Executive |
 |---|---|---|
 | **Works on** | ADRs, specs, strategy, critical analysis of plans, methodological documentation, longitudinal evaluation | Implementation of accepted spec, refactoring within spec, bug fix with identified cause, tests for existing spec, build, migrations derived from accepted schema |

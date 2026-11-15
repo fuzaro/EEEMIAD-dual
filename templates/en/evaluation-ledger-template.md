@@ -31,5 +31,18 @@ final_tier: [done@structural | done@functional | REJECTED]
 
 ---
 
-## 3. Actionable Next Step
+## 3. Delegation record (only with `delegation: tiered`)
+
+One row per task packet. Without context-level division, delete this section.
+
+| Packet | Level | Executor (model) | Checker (model) | Gate on 1st | Attempts | Escalated to | Cost |
+|---|---|---|---|:---:|:---:|---|---|
+| `ARC-XXX-T01` | local | eee-local-executor (haiku) | eee-local-checker (sonnet) | ✅ | 1 | — | [tokens] |
+
+- **Local-level escalation rate:** `[escalated / local packets]` · limit declared in the charter: `[__ %]`
+- Above the limit: revise the classification rule, not the models.
+
+---
+
+## 4. Actionable Next Step
 > [Single, unambiguous next action: promote to done@functional or issue corrective Brief].

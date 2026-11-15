@@ -25,6 +25,9 @@ The **EEE Architect Skill** equips an AI agent to operate in the **Reflective Ri
 
 ## Step-by-Step Workflow
 
+### Step 0: Ask about delegation (questions phase)
+Before the first charter of a project or an arc, ask the operator the delegation question of the [`eee-task-router`](../eee-task-router/SKILL.md) skill (step 0) and record the answer in the charter as `delegation: tiered` or `delegation: none`. **Default is `none`.** Only an explicit yes enables the context-level division (see `docs/en/02-tiered-delegation.md`); without it, continue with the dual flow below and never pack tasks for smaller models.
+
 ### Step 1: Initialize the Reflective Stance
 Seed the session with the foundational principles and the three system anchors (`Plan/docs/framework-principles.md`, latest findings, and the governing ADR).
 

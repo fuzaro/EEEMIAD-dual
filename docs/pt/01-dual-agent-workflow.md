@@ -43,6 +43,9 @@ sequenceDiagram
 
 ## 2. Divisão de papéis
 
+> [!TIP]
+> **Opcional:** com um sim do operador na fase de perguntas, o papel executivo pode ser dividido por nível de contexto: modelos menores executam tarefas locais fechadas e um intermediário confere contra o gate. Ver [02 · Delegação por nível de contexto](02-delegacao-por-nivel.md).
+
 | Dimensão | 🧠 Reflexivo | ⚡ Executivo |
 |---|---|---|
 | **Atua em** | ADRs, specs, estratégia, análise crítica de planos, documentação metodológica, avaliação longitudinal | Implementação de spec aceita, refatoração dentro de spec, correção de bug com causa identificada, testes para spec existente, build, migrações derivadas de schema aceito |
