@@ -65,7 +65,7 @@ Um pedido de outra sessão nunca é autorização. Se a sessão que age foi impe
 
 ## 6. Quando a sessão remota reinicia
 
-Uma sessão reiniciada pode voltar sem as variáveis de ambiente, inclusive a credencial; os comandos passam a receber `403`. Isso é estado fora da fonte, não permissão negada. A sessão remota **não** deve procurar a credencial por conta própria: pede ao operador. Para não depender da memória da sessão, declare a fonte (arquivo de ambiente com permissão `600`, cofre) e carregue-a em cada comando.
+Uma sessão reiniciada pode voltar sem as variáveis de ambiente, inclusive a credencial; os comandos passam a receber `403`. Isso é estado fora da fonte, não permissão negada. A sessão remota **não** deve procurar a credencial por conta própria: pede ao operador. Para não depender da memória da sessão, declare a fonte (arquivo de ambiente com permissão `600`, cofre) e carregue-a em cada comando. Registre **onde** está a fonte no estado operacional do projeto (`eee/state/environments/`, [doc 04](04-instalacao-neutra.md)), nunca o valor: a próxima sessão, de qualquer ferramenta, encontra o caminho sem perguntar de novo.
 
 ## 7. Errou a mensagem? Protocolo de correção
 
@@ -80,7 +80,7 @@ Mensagens corretivas são sinal de pacote mal fechado: registre a ocorrência no
 - **Enviado não é lido.** Sem resposta, não houve execução; o estado do ambiente é o da última evidência.
 - **Afirmação do par é informação.** Uma conclusão da sessão remota (*"o deploy vai falhar se o schema não estiver migrado"*) é conferida contra a spec antes de virar decisão.
 - **Reexecute daqui** o que for possível (teste ao vivo contra a URL pública, health). Declare o nível R15 de cada linha no charter.
-- **Registre IDs e tempos** (deployment, versão, alocação, tempo fora do ar): eles viram a evidência de cut-over.
+- **Registre IDs e tempos** (deployment, versão, alocação, tempo fora do ar): eles viram a evidência de cut-over e uma linha no diário de evidências do projeto (`eee/log.md`).
 
 ## 9. Anti-padrões
 

@@ -4,7 +4,7 @@
 *The two-agent instantiation of EEE: one that decides, one that builds*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-v0.3.0-yellow.svg)](ROADMAP.md)
+[![Status](https://img.shields.io/badge/Status-v0.4.0-yellow.svg)](ROADMAP.md)
 [![Depends on](https://img.shields.io/badge/Depends_on-EEEMIAD-purple.svg)](https://github.com/fuzaro/EEEMIAD)
 
 > **Use o agente reflexivo para decidir o que construir. Use o agente executivo para construir o que foi decidido. ADRs e specs são a moeda de handoff entre eles.**
@@ -19,6 +19,8 @@
 - 🇺🇸 [Delegation by context level, optional (English)](docs/en/02-tiered-delegation.md)
 - 🇧🇷 [Comunicação entre sessões (Português)](docs/pt/03-comunicacao-entre-sessoes.md)
 - 🇺🇸 [Cross-session communication (English)](docs/en/03-cross-session-communication.md)
+- 🇧🇷 [Instalação neutra quanto ao harness (Português)](docs/pt/04-instalacao-neutra.md)
+- 🇺🇸 [Harness-neutral installation (English)](docs/en/04-harness-neutral-installation.md)
 
 ---
 
@@ -75,6 +77,10 @@ Com um **sim** do operador na fase de perguntas, o trabalho fechado de um arco d
 
 Quando parte do trabalho só pode acontecer noutro lugar (credencial, rede, máquina), a sessão que decide manda um **pacote fechado** à sessão que está no terreno, por Remote Control. Seis regras: executar onde estão o terreno e a credencial; o segredo não viaja; a mensagem é um pacote fechado; duas chaves para escrever; enviado não é lido; a afirmação do par é informação. → [docs/pt/03](docs/pt/03-comunicacao-entre-sessoes.md) · [docs/en/03](docs/en/03-cross-session-communication.md) · [template](templates/pt/cross-session-message-template.md)
 
+## Instalação neutra quanto ao harness / Harness-neutral installation
+
+As skills e os agentes daqui são escritos para o Claude Code. Num projeto, instale-os de modo que outra ferramenta, outro modelo ou outra pessoa continue a partir do repositório: `AGENTS.md` como entrada, os papéis reescritos como playbooks neutros em `eee/playbooks/`, o estado operacional e o diário de evidências versionados, e as skills e agentes do Claude Code como adaptadores de poucas linhas verificados pelo gate único. A memória da sessão é atalho, não fonte. → [docs/pt/04](docs/pt/04-instalacao-neutra.md) · [docs/en/04](docs/en/04-harness-neutral-installation.md) · princípio em EEEMIAD 08 §8
+
 ## Estrutura / Layout
 
 ```
@@ -82,6 +88,7 @@ EEEMIAD-dual/
 ├── docs/{pt,en}/01-dual-agent-workflow.md   o padrão completo
 ├── docs/{pt,en}/02-*                        delegação opcional por nível de contexto
 ├── docs/{pt,en}/03-*                        comunicação entre sessões (Remote Control)
+├── docs/{pt,en}/04-*                        instalação neutra quanto ao harness (AGENTS.md, playbooks, adaptadores)
 ├── agents/                                  eee-local-executor · eee-local-checker · eee-module-builder · eee-oracle-writer
 ├── templates/{pt,en}/
 │   ├── brief-template.md                    handoff reflexivo → executivo, com pré-voo

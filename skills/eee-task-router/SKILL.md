@@ -1,7 +1,7 @@
 ---
 name: eee-task-router
 description: Optional system-level skill that splits an EEE arc into task packets by context level (local, module, system) and dispatches them to agents of matching model size. Activates ONLY after the operator answers yes to the delegation question in the questions phase; otherwise it records `delegation: none` and stops.
-version: 0.2.0
+version: 0.3.0
 author: EEEMIAD
 ---
 
@@ -24,7 +24,7 @@ Options: **Yes, tiered** · **No, keep the dual flow** (recommended when the arc
 Record the answer in the charter: `delegation: tiered` or `delegation: none`, with the date and the operator's words. **Without an explicit yes, stop here.**
 
 ## Step 1 · Check the agents exist
-The four agent definitions live in this repository's `agents/` directory. They must be copied to `.claude/agents/` of the target project (or `~/.claude/agents/`). If they are missing, tell the operator the copy command and do not dispatch:
+The four agent definitions live in this repository's `agents/` directory. They must be copied to `.claude/agents/` of the target project (or `~/.claude/agents/`). In a project that keeps harness-neutral instructions (`AGENTS.md` + `eee/playbooks/`), install them as thin adapters instead of copies (`docs/en/04-harness-neutral-installation.md`). If they are missing, tell the operator the copy command and do not dispatch:
 
 ```bash
 mkdir -p .claude/agents && cp <EEEMIAD-dual>/agents/eee-*.md .claude/agents/
@@ -47,7 +47,7 @@ The oracle of any arc with a `shadow` phase is its own packet → `eee-oracle-wr
 - Escalation: after `escalate_after` failures (default 2), move the packet up one level. A failure caused by an unclosed packet (missing input, ambiguous contract) is a **spec defect**: fix the packet or the spec here, then re-dispatch.
 
 ## Step 4 · Record
-Every packet gets one row in the evaluation ledger, section "Delegation record" (this repository's `templates/en/evaluation-ledger-template.md`): level, executor model, checker model, gate on first attempt, attempts, escalation and cost when the tool reports it. At the arc's closure, report the escalation rate of the local level against the limit declared in the charter. Above the limit, the classification rule needs fixing, not the models.
+Every packet gets one row in the evaluation ledger, section "Delegation record" (this repository's `templates/en/evaluation-ledger-template.md`): level, executor model, checker model, gate on first attempt, attempts, escalation and cost when the tool reports it. At the arc's closure, add a line to the project's evidence journal (`eee/log.md`) and report the escalation rate of the local level against the limit declared in the charter. Above the limit, the classification rule needs fixing, not the models.
 
 ## Core rules
 1. **Opt-in only.** No yes, no delegation.

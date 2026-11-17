@@ -2,6 +2,21 @@
 
 All notable changes to EEEMIAD-dual are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.4.0] — 2026-11-17
+
+### Added
+- **Harness-neutral installation** guide (`docs/pt/04-instalacao-neutra.md`, `docs/en/04-harness-neutral-installation.md`): how to install this repository's roles in a project so that another tool, model or person continues from the repository. `AGENTS.md` as entry point; skills rewritten as neutral playbooks in `eee/playbooks/`; Claude Code skills and agents as adapters of at most 20 lines checked by the single gate; operational state and evidence journal in the repository; session memory as a shortcut. Mapping table, adapter example, anti-patterns, checklist.
+
+### Changed
+- `eee-architect` 1.1.0: step 1 seeds from the repository (`AGENTS.md`, operational state, journal); new step 5, record the journal line and the state in the same commit.
+- `eee-executor` 1.1.0: step 4 runs the project's single gate; journal line on state changes.
+- `eee-gate-checker` 0.3.0: the packet's gate is a subset of the single gate, never a weaker command.
+- `eee-task-router` 0.3.0: agents installed as adapters in harness-neutral projects; journal line at the arc's closure.
+- Agents: read the project's `AGENTS.md` first; its hard rules prevail.
+- Cross-session guide and message template: the source of a remote credential is recorded in the operational state (where, never the value); rounds that change an environment get a journal line.
+
+Principle (tool-neutral) in EEEMIAD 1.5.0, ch. 08 §8.
+
 ## [0.3.0] — 2026-11-15
 
 ### Added

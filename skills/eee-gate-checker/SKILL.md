@@ -1,7 +1,7 @@
 ---
 name: eee-gate-checker
 description: Intermediate-level skill for checking an EEE task packet blindly against its mechanical gate. Used by the eee-local-checker agent when the operator enabled tiered delegation. Runs the gate first, then compares the output with the spec section; never reads the executor's reasoning and never edits.
-version: 0.2.0
+version: 0.3.0
 author: EEEMIAD
 ---
 
@@ -21,7 +21,7 @@ Only inside a charter with `delegation: tiered`, for packets classified as **loc
 Not an input: the executor's chat, reasoning or notes.
 
 ## Procedure
-1. **Run the gate yourself.** Copy the exact command from the packet, not from the executor's report. Red gate → `RETURNED` with the literal failure. Stop.
+1. **Run the gate yourself.** Copy the exact command from the packet, not from the executor's report. The packet's gate is a subset of the project's single gate; never accept a weaker command in its place. Red gate → `RETURNED` with the literal failure. Stop.
 2. **Scope.** `git diff --stat` must list only the packet's declared change points. Anything else → `RETURNED (out of scope)`.
 3. **Contract.** Compare the output with the packet's "Output contract" and with the cited spec section, clause by clause.
 4. **Refutation.** Try the packet's refutation condition. If it is observed while the gate is green, the gate is too weak: `ESCALATE (weak gate)`. That is a system-level defect.

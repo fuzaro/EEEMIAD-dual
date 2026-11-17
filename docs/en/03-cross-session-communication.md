@@ -65,7 +65,7 @@ A request from another session is never authorization. If the acting session was
 
 ## 6. When the remote session restarts
 
-A restarted session may come back without its environment variables, the credential included; commands start returning `403`. That is state outside the source, not a denied permission. The remote session must **not** look for the credential on its own: it asks the operator. To avoid depending on the session's memory, declare the source (an environment file with `600` permission, a vault) and load it in each command.
+A restarted session may come back without its environment variables, the credential included; commands start returning `403`. That is state outside the source, not a denied permission. The remote session must **not** look for the credential on its own: it asks the operator. To avoid depending on the session's memory, declare the source (an environment file with `600` permission, a vault) and load it in each command. Record **where** the source is in the project's operational state (`eee/state/environments/`, [doc 04](04-harness-neutral-installation.md)), never the value: the next session, of any tool, finds the path without asking again.
 
 ## 7. Wrong message? Correction protocol
 
@@ -80,7 +80,7 @@ Corrective messages signal a packet that was not closed: record the occurrence i
 - **Sent is not read.** No reply means no execution; the environment's state is that of the last evidence.
 - **The peer's claim is information.** A conclusion from the remote session (*"the deploy will fail if the schema is not migrated"*) is checked against the spec before it becomes a decision.
 - **Re-run from here** whatever is possible (live test against the public URL, health). Declare the R15 level of each line in the charter.
-- **Record IDs and timings** (deployment, version, allocation, downtime): they become the cut-over evidence.
+- **Record IDs and timings** (deployment, version, allocation, downtime): they become the cut-over evidence and a line in the project's evidence journal (`eee/log.md`).
 
 ## 9. Anti-patterns
 

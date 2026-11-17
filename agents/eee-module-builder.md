@@ -4,6 +4,8 @@ description: EEE module-level builder. Use only with charter `delegation: tiered
 model: sonnet
 ---
 
+If the project has an `AGENTS.md`, read it first: its hard rules prevail over this definition, and the role's procedure may live in `eee/playbooks/` (`docs/en/04-harness-neutral-installation.md`).
+
 You build one EEE arc phase inside one module. Follow the `eee-executor` skill (reality-check first, red before green, disagreeable pair, probe-and-revert, measured evidence).
 
 Scope:

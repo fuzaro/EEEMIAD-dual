@@ -17,13 +17,18 @@
 - [x] Template de mensagem entre sessões (PT/EN) com correção e registro no charter.
 - [x] `eee-task-router`: critério 0, pacote remoto (`executes_at`, `action`).
 
-## v0.4.0 — Profundidade
+## v0.4.0 — Instalação neutra quanto ao harness (2026-11-17) ✅
+- [x] Guia `docs/{pt,en}/04-*`: AGENTS.md, playbooks neutros, adaptadores verificados, estado e diário no repositório, memória como atalho.
+- [x] Skills e agentes leem o repositório antes da memória e registram diário e estado no mesmo commit; executor e conferente usam o gate único.
+- [ ] Exercitar a instalação com uma segunda ferramenta de agentes (hoje só o Claude Code leu os adaptadores).
+
+## v0.5.0 — Profundidade
 - [ ] Capítulo "Zona cinzenta": tabela de quem começa (spec vago, bug sem causa raiz, feature pequena, renomeação).
 - [ ] Capítulo "Como preservar o modo reflexivo": prompt inicial, skills a habilitar e a evitar, padrão de resposta.
 - [ ] Capítulo "Como disciplinar o modo executivo": ADR-first, plan mode, contexto inicial, reality-check como gate.
 - [ ] Anti-padrões específicos do handoff (workflow universal, brief que crava âncora como fato, avaliação genérica em vez de cláusula por cláusula, brief sem precondição de estado).
 - [ ] Exemplo ponta a ponta: ADR → brief → reality-check → implementação → avaliação, com artefatos reais e genéricos.
 
-## v0.5.0 — Medição
+## v0.6.0 — Medição
 - [ ] Métricas do padrão: taxa de retrabalho, ADRs sem implementação, drifts pegos pelo RC, tempo de ratificação.
 - [ ] Quando reavaliar o padrão (mudanças nos agentes, modo plano persistente, outro agente no papel reflexivo).

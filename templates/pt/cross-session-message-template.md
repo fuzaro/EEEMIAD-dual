@@ -36,3 +36,5 @@ Restrição reafirmada: [ex.: nada roda sem o token e sem a autorização do ope
 | Mensagem | Ação | Chave 1 | Chave 2 | Resposta recebida | Reexecutado daqui | Nível R15 |
 |---|---|---|---|---|---|---|
 | [assunto] | leitura / escrita | [decisão, data] | [autorização na sessão que age] | [sim, data / não] | [comando → resultado] | [2 / 3b / 4] |
+
+Depois de registrar no charter, acrescente uma linha ao diário de evidências do projeto (`eee/log.md`) quando a rodada mudou o estado de um ambiente.

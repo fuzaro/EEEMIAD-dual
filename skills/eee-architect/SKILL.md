@@ -1,7 +1,7 @@
 ---
 name: eee-architect
 description: Skill for the reflective agent (the EEE role "who decides"). Guides architectural planning, formal ADR drafting with counter-arguments, and decision-by-decision compliance evaluations.
-version: 1.0.0
+version: 1.1.0
 author: EEEMIAD
 ---
 
@@ -29,7 +29,7 @@ The **EEE Architect Skill** equips an AI agent to operate in the **Reflective Ri
 Before the first charter of a project or an arc, ask the operator the delegation question of the [`eee-task-router`](../eee-task-router/SKILL.md) skill (step 0) and record the answer in the charter as `delegation: tiered` or `delegation: none`. **Default is `none`.** Only an explicit yes enables the context-level division (see `docs/en/02-tiered-delegation.md`); without it, continue with the dual flow below and never pack tasks for smaller models.
 
 ### Step 1: Initialize the Reflective Stance
-Seed the session with the foundational principles and the three system anchors (`Plan/docs/framework-principles.md`, latest findings, and the governing ADR).
+Seed the session from the repository, not from memory: the project's `AGENTS.md` (when present), its operational state (`eee/state/STATE.md`, checked against the environment), the last entries of the evidence journal (`eee/log.md`), the foundational principles (`Plan/docs/`) and the governing ADR. See `docs/en/04-harness-neutral-installation.md`.
 
 ### Step 2: Formulate the ADR
 Use `EEEMIAD `templates/en/adr-template.md`. Ensure:
@@ -48,3 +48,6 @@ When the Executive Agent delivers code:
 - Do not perform a generic review.
 - Read the test outputs and measured evidence.
 - Produce the compliance evaluation ledger using `templates/en/evaluation-ledger-template.md` (this repository).
+
+### Step 5: Record
+Every state change you decide (arc opened or closed, flip, deploy, operator decision) gets, **in the same commit**, a line in the evidence journal (`eee/log.md`, EEEMIAD `templates/en/evidence-journal-template.md`) and an update of `eee/state/STATE.md`. Do not leave it for the end of the session: a session can end without warning.

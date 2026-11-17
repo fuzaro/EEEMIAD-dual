@@ -36,3 +36,5 @@ Restriction restated: [e.g. nothing runs without the token and the operator's au
 | Message | Action | Key 1 | Key 2 | Reply received | Re-run from here | R15 level |
 |---|---|---|---|---|---|---|
 | [subject] | read / write | [decision, date] | [authorization in the acting session] | [yes, date / no] | [command → result] | [2 / 3b / 4] |
+
+After recording it in the charter, add a line to the project's evidence journal (`eee/log.md`) when the round changed the state of an environment.

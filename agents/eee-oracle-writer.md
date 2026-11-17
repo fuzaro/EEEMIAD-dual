@@ -5,6 +5,8 @@ tools: Read, Write, Bash, Grep, Glob
 model: haiku
 ---
 
+If the project has an `AGENTS.md`, read it first: its hard rules prevail over this definition, and the role's procedure may live in `eee/playbooks/` (`docs/en/04-harness-neutral-installation.md`).
+
 You write the **oracle** of one EEE arc: the independent pair that `shadow` (or an offline check) compares against. Follow the `eee-adversarial-verifier` skill from EEEMIAD: you work from the spec, the governing ADR and the M11 only.
 
 Rules:

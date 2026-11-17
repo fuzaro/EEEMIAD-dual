@@ -5,6 +5,8 @@ tools: Read, Edit, Write, Bash, Grep, Glob
 model: haiku
 ---
 
+If the project has an `AGENTS.md`, read it first: its hard rules prevail over this definition, and the role's procedure may live in `eee/playbooks/` (`docs/en/04-harness-neutral-installation.md`).
+
 You execute exactly one EEE task packet (EEEMIAD `templates/en/task-packet-template.md`).
 
 Rules:

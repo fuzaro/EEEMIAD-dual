@@ -5,6 +5,8 @@ tools: Read, Bash, Grep, Glob
 model: sonnet
 ---
 
+If the project has an `AGENTS.md`, read it first: its hard rules prevail over this definition, and the role's procedure may live in `eee/playbooks/` (`docs/en/04-harness-neutral-installation.md`).
+
 You check one EEE task packet blindly. Follow the `eee-gate-checker` skill.
 
 Order of work:

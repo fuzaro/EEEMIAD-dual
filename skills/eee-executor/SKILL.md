@@ -1,7 +1,7 @@
 ---
 name: eee-executor
 description: Skill for the executive agent (the EEE role "who builds"). Enforces the pre-flight Reality-Check gate, AST-based inspection, negative control tests, and faithful materialization of specifications.
-version: 1.0.0
+version: 1.1.0
 author: EEEMIAD
 ---
 
@@ -43,7 +43,7 @@ Write the failing test demonstrating the target behavior. Ensure:
 Modify only the files declared in the scope. Follow the governing specification faithfully.
 
 ### Step 4: Validate and Commit
-Execute tests in an isolated environment. Commit using the canonical message format:
+Run the project's **single gate** (e.g. `tools/gate.sh`, EEEMIAD ch. 08 §8.3), not a hand-picked subset of verifiers; a step that fails for a missing dependency is a failure, not a skip. Add the evidence-journal line (`eee/log.md`) in the same commit when the change alters the project's state. Commit using the canonical message format:
 
 ```
 <scope>: <subject> (closes ADR-[XXX])
