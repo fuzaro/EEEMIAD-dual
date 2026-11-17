@@ -27,6 +27,12 @@ date: YYYY-MM-DD
 5. **Precondição de Estado:** Este item depende de tupla, grant ou flag que ainda não existe?
    - Comando que verifica: `______`
    - Resultado observado:  `______`
+6. **Estado do Destino:** O ambiente de destino está num estado que os testes não exercitaram (vazio, recém-migrado, dados antigos fora da regra nova)? Se sim, a bateria roda a partir desse estado.
+   - `______`
+7. **Reprodução ao Vivo:** Leitura ou escrita? Escrita em dado de negócio só com dado marcado como teste e removível; senão, só leitura.
+   - `______`
+8. **Item do Pedido:** Que item do pedido de origem (matriz pedido × arco) este brief atende?
+   - `______`
 
 ---
 

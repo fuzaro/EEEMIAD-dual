@@ -2,6 +2,13 @@
 
 All notable changes to EEEMIAD-dual are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.4.1] — 2026-11-17
+
+### Changed
+- Brief template (PT/EN): pre-flight gains *target state* (6), *live reproduction read or write* (7) and *request item* (8), following EEEMIAD 1.6.0.
+- `eee-executor` 1.2.0: every stateful battery declares and prepares its starting state; probe-and-revert declares the layers it removes, with one test per redundant layer.
+- `eee-module-builder`: report lines for the layers removed and the starting state.
+
 ## [0.4.0] — 2026-11-17
 
 ### Added

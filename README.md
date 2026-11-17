@@ -4,7 +4,7 @@
 *The two-agent instantiation of EEE: one that decides, one that builds*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-v0.4.0-yellow.svg)](ROADMAP.md)
+[![Status](https://img.shields.io/badge/Status-v0.4.1-yellow.svg)](ROADMAP.md)
 [![Depends on](https://img.shields.io/badge/Depends_on-EEEMIAD-purple.svg)](https://github.com/fuzaro/EEEMIAD)
 
 > **Use o agente reflexivo para decidir o que construir. Use o agente executivo para construir o que foi decidido. ADRs e specs são a moeda de handoff entre eles.**

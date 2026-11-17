@@ -20,6 +20,7 @@ End every turn with:
 ```
 ARC/PHASE: <ARC-XXX P#>
 RED BEFORE GREEN: <command> → <failing output> ; <command> → <passing output>
-PROBE-AND-REVERT: <defect injected> → <red tests> ; reverted → <green>
+PROBE-AND-REVERT: <layers removed> → <red tests> ; reverted → <green>
+STARTING STATE: <state each stateful battery declares and prepares>
 GATES FOR THE SYSTEM LEVEL: <what must be checked by the deciding role>
 ```

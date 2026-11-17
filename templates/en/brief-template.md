@@ -27,6 +27,12 @@ date: YYYY-MM-DD
 5. **State Precondition:** Does this task depend on a tuple, grant, or flag that does not yet exist?
    - Verification command: `______`
    - Observed result:     `______`
+6. **Target State:** Is the target environment in a state the tests never exercised (empty, just migrated, old data outside a new rule)? If so, the battery runs from that state.
+   - `______`
+7. **Live Reproduction:** Read or write? A write into business data only with data marked as test and removable; otherwise read only.
+   - `______`
+8. **Request Item:** Which item of the original request (request × arc matrix) does this brief serve?
+   - `______`
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: eee-executor
 description: Skill for the executive agent (the EEE role "who builds"). Enforces the pre-flight Reality-Check gate, AST-based inspection, negative control tests, and faithful materialization of specifications.
-version: 1.1.0
+version: 1.2.0
 author: EEEMIAD
 ---
 
@@ -38,6 +38,8 @@ Write the failing test demonstrating the target behavior. Ensure:
 - The target case passes with the new code.
 - Legacy functionality remains green.
 - A neighboring case that should remain barred is genuinely barred (negative control).
+- Every stateful battery declares and prepares the state it starts from (isolated database or fixture loaded in the file itself); shared undeclared state makes suites sabotage each other.
+- Probe-and-revert declares the layers it removes. When two layers guarantee the same property (application check and database constraint), each gets a test that exercises it alone, and one probe removes them all (EEEMIAD ch. 06 §4).
 
 ### Step 3: Implement Surgical Code
 Modify only the files declared in the scope. Follow the governing specification faithfully.
